@@ -2,6 +2,7 @@ package com.javatechie.listener;
 
 import com.javatechie.common.KafkaConfigProperties;
 import com.javatechie.events.BookingPaymentEvent;
+import com.javatechie.service.BookingService;
 import com.javatechie.service.SeatInventoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -16,17 +17,21 @@ public class PaymentStatusListener {
 
 
     private SeatInventoryService service;
+    private final BookingService bookingService; // <-- add this- NEW
 
-    public PaymentStatusListener(SeatInventoryService service) {
+
+    public PaymentStatusListener(SeatInventoryService service,BookingService bookingService) {
         this.service = service;
+        this.bookingService = bookingService; // <-- assign
     }
 
-    @KafkaListener(topics = PAYMENT_EVENTS_TOPIC, groupId = SEAT_EVENT_GROUP)
+    @KafkaListener(id = "seat-payment-status-listener",topics = PAYMENT_EVENTS_TOPIC, groupId = SEAT_EVENT_GROUP,containerFactory ="kafkaListenerContainerFactory")
     public void consumePaymentStatusEvents(BookingPaymentEvent event) {
      log.info("PaymentStatusListener:: Consuming Booking payment status event {}", event.bookingId());
 
 
      if(event.paymentCompleted()){
+         bookingService.markBookingConfirmed(event.bookingId()); // <-- NEW: mark CONFIRMED
          log.info("Payment status succeeded for bookingId: {}", event.bookingId());
      }else{
          log.info("Payment failed for bookingId: {}, releasing seats.", event.bookingId());

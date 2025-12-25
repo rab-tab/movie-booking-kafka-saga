@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.TimeoutException;
+
 import static com.javatechie.common.KafkaConfigProperties.MOVIE_BOOKING_EVENTS_TOPIC;
 import static com.javatechie.common.KafkaConfigProperties.SEAT_EVENT_GROUP;
 
@@ -21,8 +23,8 @@ public class SeatInventoryListener {
         this.seatInventoryService = seatInventoryService;
     }
 
-    @KafkaListener(topics = MOVIE_BOOKING_EVENTS_TOPIC, groupId = SEAT_EVENT_GROUP)
-    public void consumeBookingEvents(BookingCreatedEvent event) {
+    @KafkaListener(id = "seat-booking-created-listener",topics = MOVIE_BOOKING_EVENTS_TOPIC, groupId = SEAT_EVENT_GROUP,containerFactory ="kafkaListenerContainerFactory")
+    public void consumeBookingEvents(BookingCreatedEvent event) throws TimeoutException {
         // Logic to update seat inventory based on booking event
         log.info("SeatInventoryListener:: Consuming bookingCreated event for bookingId {}", event.bookingId());
         seatInventoryService.handleBooking(event);

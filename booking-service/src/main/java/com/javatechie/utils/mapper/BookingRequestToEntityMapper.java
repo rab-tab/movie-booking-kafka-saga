@@ -15,7 +15,7 @@ public class BookingRequestToEntityMapper {
         booking.setBookingCode(reservationCode);
         booking.setSeatIds(request.seatIds());
         booking.setUserId(request.userId());
-        booking.setStatus("CONFIRMED");
+       // booking.setStatus("CONFIRMED");
         booking.setCreatedAt(java.time.Instant.now());
         booking.setAmount(request.amount());
         return booking;

@@ -18,17 +18,17 @@ public class SeatReserveEventConsumer {
     private final PaymentService paymentService;
 
 
-    @KafkaListener(topics = SEAT_RESERVED_TOPIC, groupId = PAYMENT_EVENT_GROUP)
+    @KafkaListener(topics = SEAT_RESERVED_TOPIC, groupId = PAYMENT_EVENT_GROUP,containerFactory ="kafkaListenerContainerFactory")
     public void consume(SeatReservedEvent event) {
-        try {
+       // try {
             log.info("Consumed SeatReservedEvent for bookingId: {} and event {}", event.bookingId(), event);
             if(event.reserved()) {
                 paymentService.processPayment(event);
             }else{
                 log.info("skipping payment processing as seat reservation failed for bookingId: {}", event.bookingId());
             }
-        } catch (Exception e) {
-            log.error("Error processing SeatReservedEvent for bookingId {}: {}", event.bookingId(), e.getMessage());
-        }
+        //} catch (Exception e) {
+       //     log.error("Error processing SeatReservedEvent for bookingId {}: {}", event.bookingId(), e.getMessage());
+       // }
     }
 }

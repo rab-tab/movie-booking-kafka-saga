@@ -20,12 +20,13 @@ public class MovieBookingListener {
         this.service = service;
     }
 
-    @KafkaListener(topics = SEAT_RESERVED_TOPIC, groupId = MOVIE_BOOKING_GROUP)
+    @KafkaListener(id = "booking-seat-listener",topics = SEAT_RESERVED_TOPIC, groupId = MOVIE_BOOKING_GROUP,containerFactory ="kafkaListenerContainerFactory")
     public void consumeSeatReserveEvents(SeatReservedEvent event){
 
         log.info("MovieBookingListener:: Consuming seatReserved event");
 
         if(event.reserved()){
+            service.markBookingPending(event.bookingId()); // <-- NEW: mark PENDING when seat reserved
             log.info("Booking process completed for bookingId: {}", event.bookingId());
         }else{
             //rollback

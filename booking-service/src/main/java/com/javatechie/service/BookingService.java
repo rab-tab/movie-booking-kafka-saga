@@ -71,4 +71,21 @@ public class BookingService {
         }
 
     }
+    public void markBookingPending(String bookingId) {
+        var booking = bookingRepository.findByBookingCode(bookingId);
+        if (booking != null && booking.getStatus() == null) {
+            booking.setStatus("PENDING");
+            bookingRepository.save(booking);
+            log.info("BookingService:: Booking marked as PENDING for bookingId {}", bookingId);
+        }
+    }
+
+    public void markBookingConfirmed(String bookingId) {
+        var booking = bookingRepository.findByBookingCode(bookingId);
+        if (booking != null && "PENDING".equals(booking.getStatus())) {
+            booking.setStatus("CONFIRMED");
+            bookingRepository.save(booking);
+            log.info("BookingService:: Booking marked as CONFIRMED for bookingId {}", bookingId);
+        }
+    }
 }

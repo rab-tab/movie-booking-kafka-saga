@@ -8,6 +8,8 @@ import com.javatechie.repository.SeatInventoryRepository;
 import com.javatechie.utils.enums.SeatStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import java.util.List;
 
@@ -17,6 +19,7 @@ public class SeatInventoryService {
 
     private final SeatInventoryRepository seatInventoryRepository;
     private final SeatReserveProducer seatReserveProducer;
+    private final AtomicBoolean simulateTimeout = new AtomicBoolean(false);
 
     public SeatInventoryService(SeatInventoryRepository seatInventoryRepository,
                                 SeatReserveProducer seatReserveProducer) {
@@ -27,9 +30,13 @@ public class SeatInventoryService {
 
     // Add service methods to manage seat inventory
 
-    public void handleBooking(BookingCreatedEvent event) {
+    public void handleBooking(BookingCreatedEvent event) throws TimeoutException {
 
         log.info("SeatInventoryService:: Processing bookingCreated for bookingId {}", event.bookingId());
+        if (simulateTimeout.get()) {
+            log.error("Simulating timeout for bookingId {}", event.bookingId());
+            throw new TimeoutException("Simulated seat inventory timeout");
+        }
 
         // Fetch seat inventories for the given show and seat numbers
         List<SeatInventory> seats = seatInventoryRepository
@@ -75,5 +82,13 @@ public class SeatInventoryService {
 
         seatReserveProducer
                 .publishSeatReserveEvents(new SeatReservedEvent(bookingId, false, 0));
+    }
+
+    public void enableTimeoutSimulation() {
+        simulateTimeout.set(true);
+    }
+
+    public void disableTimeoutSimulation() {
+        simulateTimeout.set(false);
     }
 }
