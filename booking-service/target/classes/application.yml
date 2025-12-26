@@ -41,3 +41,14 @@ kafka:
     dlt:
       seat-reserved: seat-reserved-topic-dlt
       payment-events: payment-events-dlt
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+otel:
+  exporter:
+    otlp:
+      endpoint: http://localhost:4317
+

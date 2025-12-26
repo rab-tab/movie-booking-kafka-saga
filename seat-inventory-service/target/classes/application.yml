@@ -44,3 +44,13 @@ kafka:
     dlt:
       booking-created: movie-booking-events-dlt
       payment-events: payment-events-dlt
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+otel:
+  exporter:
+    otlp:
+      endpoint: http://localhost:4317
