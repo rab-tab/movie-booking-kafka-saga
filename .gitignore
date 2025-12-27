@@ -1,0 +1,12 @@
+# Maven
+**/target/
+*.jar
+*.war
+
+# Docker
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.iml
