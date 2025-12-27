@@ -2,19 +2,23 @@
 FROM maven:3.9.5-eclipse-temurin-21 AS build
 WORKDIR /app
 
-# Copy root pom and required modules
-COPY pom.xml .
-COPY movie-booking-commons ./movie-booking-commons
-COPY seat-inventory-service ./seat-inventory-service
+# Copy root pom
+COPY pom.xml ./pom.xml
 
-# Build booking-service along with commons
-RUN mvn clean package -pl movie-booking-commons,seat-inventory-service -am -DskipTests
+# Copy all modules
+COPY movie-booking-commons ./movie-booking-commons
+COPY booking-service ./booking-service
+COPY seat-inventory-service ./seat-inventory-service
+COPY payment-service ./payment-service
+
+# Build only booking-service along with dependencies
+RUN mvn clean package -pl seat-inventory-service -am -DskipTests
 
 # Stage 2: Runtime
 FROM eclipse-temurin:21-jdk-jammy
 WORKDIR /app
 
-COPY --from=build /app/booking-service/target/seat-inventory-service-0.0.1-SNAPSHOT.jar ./seat-inventory-service.jar
+COPY --from=build /app/seat-inventory-service/target/seat-inventory-service-0.0.1-SNAPSHOT.jar ./seat-inventory-service.jar
 
 EXPOSE 8081
-ENTRYPOINT ["java","-jar","booking-service.jar"]
+ENTRYPOINT ["java", "-jar", "seat-inventory-service.jar"]
