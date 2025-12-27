@@ -1,5 +1,6 @@
 package com.javatechie.service;
 
+import com.javatechie.config.BookingStatus;
 import com.javatechie.entity.Booking;
 import com.javatechie.events.BookingCreatedEvent;
 import com.javatechie.messaging.BookingEventProducer;
@@ -81,11 +82,57 @@ public class BookingService {
     }
 
     public void markBookingConfirmed(String bookingId) {
+
         var booking = bookingRepository.findByBookingCode(bookingId);
-        if (booking != null && "PENDING".equals(booking.getStatus())) {
-            booking.setStatus("CONFIRMED");
-            bookingRepository.save(booking);
-            log.info("BookingService:: Booking marked as CONFIRMED for bookingId {}", bookingId);
+
+        if (booking == null) {
+            log.warn("BookingService:: Booking not found for id {}", bookingId);
+            return;
         }
+
+        // 🔁 Idempotency
+        if (BookingStatus.CONFIRMED.equals(booking.getStatus())) {
+            log.info("Booking {} already CONFIRMED. Skipping.", bookingId);
+            return;
+        }
+
+        // 🚫 Invalid transition
+        if (BookingStatus.FAILED.equals(booking.getStatus())) {
+            log.warn("Booking {} already FAILED. Cannot confirm.", bookingId);
+            return;
+        }
+
+        booking.setStatus(BookingStatus.CONFIRMED);
+        bookingRepository.save(booking);
+
+        log.info("BookingService:: Booking marked as CONFIRMED for bookingId {}", bookingId);
     }
+
+    public void cancelBooking(String bookingId) {
+
+        var booking = bookingRepository.findByBookingCode(bookingId);
+
+        if (booking == null) {
+            log.warn("BookingService:: Booking not found for id {}", bookingId);
+            return;
+        }
+
+        // 🔁 Idempotency
+        if (BookingStatus.FAILED.equals(booking.getStatus())) {
+            log.info("Booking {} already FAILED. Skipping.", bookingId);
+            return;
+        }
+
+        // 🚫 Do not cancel confirmed booking
+        if (BookingStatus.CONFIRMED.equals(booking.getStatus())) {
+            log.warn("Booking {} already CONFIRMED. Cannot cancel.", bookingId);
+            return;
+        }
+
+        booking.setStatus(BookingStatus.FAILED);
+        bookingRepository.save(booking);
+
+        log.info("BookingService:: Booking marked as FAILED for bookingId {}", bookingId);
+    }
+
 }

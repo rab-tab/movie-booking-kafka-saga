@@ -1,7 +1,6 @@
 com/javatechie/utils/mapper/BookingRequestToEntityMapper.class
 com/javatechie/MovieBookingListener.class
 com/javatechie/controller/KafkaListenerController.class
-com/javatechie/config/BookingStatus.class
 com/javatechie/controller/BookingController.class
 com/javatechie/messaging/BookingEventProducer.class
 com/javatechie/service/BookingService.class

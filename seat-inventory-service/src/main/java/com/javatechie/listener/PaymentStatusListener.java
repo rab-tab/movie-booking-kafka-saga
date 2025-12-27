@@ -13,30 +13,30 @@ import static com.javatechie.common.KafkaConfigProperties.SEAT_EVENT_GROUP;
 
 @Component
 @Slf4j
+
 public class PaymentStatusListener {
 
+    private final SeatInventoryService seatInventoryService;
 
-    private SeatInventoryService service;
-    private final BookingService bookingService; // <-- add this- NEW
-
-
-    public PaymentStatusListener(SeatInventoryService service,BookingService bookingService) {
-        this.service = service;
-        this.bookingService = bookingService; // <-- assign
+    public PaymentStatusListener(SeatInventoryService seatInventoryService) {
+        this.seatInventoryService = seatInventoryService;
     }
 
-    @KafkaListener(id = "seat-payment-status-listener",topics = PAYMENT_EVENTS_TOPIC, groupId = SEAT_EVENT_GROUP,containerFactory ="kafkaListenerContainerFactory")
+    @KafkaListener(
+            id = "seat-payment-status-listener",
+            topics = PAYMENT_EVENTS_TOPIC,
+            groupId = SEAT_EVENT_GROUP,
+            containerFactory = "kafkaListenerContainerFactory"
+    )
     public void consumePaymentStatusEvents(BookingPaymentEvent event) {
-     log.info("PaymentStatusListener:: Consuming Booking payment status event {}", event.bookingId());
 
+        log.info("PaymentStatusListener:: Consuming payment event {}", event.bookingId());
 
-     if(event.paymentCompleted()){
-         bookingService.markBookingConfirmed(event.bookingId()); // <-- NEW: mark CONFIRMED
-         log.info("Payment status succeeded for bookingId: {}", event.bookingId());
-     }else{
-         log.info("Payment failed for bookingId: {}, releasing seats.", event.bookingId());
-         service.releaseSeatsOnPaymentFailure(event.bookingId());
-     }
-
+        if (!event.paymentCompleted()) {
+            log.info("Payment failed for bookingId: {}, releasing seats", event.bookingId());
+            seatInventoryService.releaseSeatsOnPaymentFailure(event.bookingId());
+        }
+        // ✅ Payment success → do NOTHING here
     }
 }
+

@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="movie-booking-commons" />
       </profile>
-      <profile name="Annotation profile for seat-inventory-service" enabled="true">
+      <profile name="Annotation profile for movie-booking-app" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -25,6 +25,7 @@
       <module name="booking-service" target="18" />
       <module name="movie-booking-commons" target="18" />
       <module name="payment-service" target="18" />
+      <module name="saga-choreography" target="1.5" />
       <module name="seat-inventory-service" target="18" />
     </bytecodeTargetLevel>
   </component>
