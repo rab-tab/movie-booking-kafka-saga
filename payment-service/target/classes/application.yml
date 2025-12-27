@@ -26,3 +26,14 @@ kafka:
     seat-reserved: seat-reserved-topic
     dlt:
       seat-reserved: seat-reserved-topic-dlt
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+otel:
+  exporter:
+    otlp:
+      endpoint: http://localhost:4317
+
