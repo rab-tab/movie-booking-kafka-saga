@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.javatechie.BookingServiceApplicationTests" time="56.491" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/rabia/IdeaProjects/saga-choreography/booking-service/target/test-classes:/Users/rabia/IdeaProjects/saga-choreography/booking-service/target/classes:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.5.7/spring-boot-starter-data-jpa-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter/3.5.7/spring-boot-starter-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot/3.5.7/spring-boot-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.7/spring-boot-autoconfigure-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.5.7/spring-boot-starter-logging-3.5.7.jar:/Users/rabia/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/Users/rabia/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/Users/rabia/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar:/Users/rabia/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/rabia/.m2/repository/org/yaml/snakeyaml/2.4/snakeyaml-2.4.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.5.7/spring-boot-starter-jdbc-3.5.7.jar:/Users/rabia/.m2/repository/com/zaxxer/HikariCP/6.3.3/HikariCP-6.3.3.jar:/Users/rabia/.m2/repository/org/springframework/spring-jdbc/6.2.12/spring-jdbc-6.2.12.jar:/Users/rabia/.m2/repository/org/hibernate/orm/hibernate-core/6.6.33.Final/hibernate-core-6.6.33.Final.jar:/Users/rabia/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/rabia/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/rabia/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/Users/rabia/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/Users/rabia/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/Users/rabia/.m2/repository/com/fasterxml/classmate/1.7.1/classmate-1.7.1.jar:/Users/rabia/.m2/repository/net/bytebuddy/byte-buddy/1.17.8/byte-buddy-1.17.8.jar:/Users/rabia/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.6/jaxb-runtime-4.0.6.jar:/Users/rabia/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.6/jaxb-core-4.0.6.jar:/Users/rabia/.m2/repository/org/eclipse/angus/angus-activation/2.0.3/angus-activation-2.0.3.jar:/Users/rabia/.m2/repository/org/glassfish/jaxb/txw2/4.0.6/txw2-4.0.6.jar:/Users/rabia/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/rabia/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/rabia/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/Users/rabia/.m2/repository/org/springframework/data/spring-data-jpa/3.5.5/spring-data-jpa-3.5.5.jar:/Users/rabia/.m2/repository/org/springframework/data/spring-data-commons/3.5.5/spring-data-commons-3.5.5.jar:/Users/rabia/.m2/repository/org/springframework/spring-orm/6.2.12/spring-orm-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-aop/6.2.12/spring-aop-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-beans/6.2.12/spring-beans-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-aspects/6.2.12/spring-aspects-6.2.12.jar:/Users/rabia/.m2/repository/org/aspectj/aspectjweaver/1.9.24/aspectjweaver-1.9.24.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.5.7/spring-boot-starter-web-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.5.7/spring-boot-starter-json-3.5.7.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.19.2/jackson-datatype-jdk8-2.19.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.19.2/jackson-datatype-jsr310-2.19.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.19.2/jackson-module-parameter-names-2.19.2.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.5.7/spring-boot-starter-tomcat-3.5.7.jar:/Users/rabia/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.48/tomcat-embed-core-10.1.48.jar:/Users/rabia/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.48/tomcat-embed-el-10.1.48.jar:/Users/rabia/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.48/tomcat-embed-websocket-10.1.48.jar:/Users/rabia/.m2/repository/org/springframework/spring-web/6.2.12/spring-web-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-webmvc/6.2.12/spring-webmvc-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-expression/6.2.12/spring-expression-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/kafka/spring-kafka/3.3.10/spring-kafka-3.3.10.jar:/Users/rabia/.m2/repository/org/springframework/spring-context/6.2.12/spring-context-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-messaging/6.2.12/spring-messaging-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-tx/6.2.12/spring-tx-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/retry/spring-retry/2.0.12/spring-retry-2.0.12.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-clients/3.9.1/kafka-clients-3.9.1.jar:/Users/rabia/.m2/repository/com/github/luben/zstd-jni/1.5.6-4/zstd-jni-1.5.6-4.jar:/Users/rabia/.m2/repository/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/Users/rabia/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5.jar:/Users/rabia/.m2/repository/io/micrometer/micrometer-observation/1.15.5/micrometer-observation-1.15.5.jar:/Users/rabia/.m2/repository/io/micrometer/micrometer-commons/1.15.5/micrometer-commons-1.15.5.jar:/Users/rabia/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.0.4/springdoc-openapi-starter-webmvc-ui-2.0.4.jar:/Users/rabia/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.0.4/springdoc-openapi-starter-webmvc-api-2.0.4.jar:/Users/rabia/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.0.4/springdoc-openapi-starter-common-2.0.4.jar:/Users/rabia/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.8/swagger-core-jakarta-2.2.8.jar:/Users/rabia/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/Users/rabia/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.8/swagger-annotations-jakarta-2.2.8.jar:/Users/rabia/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.8/swagger-models-jakarta-2.2.8.jar:/Users/rabia/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.19.2/jackson-dataformat-yaml-2.19.2.jar:/Users/rabia/.m2/repository/org/webjars/swagger-ui/4.18.1/swagger-ui-4.18.1.jar:/Users/rabia/.m2/repository/org/webjars/webjars-locator-core/0.59/webjars-locator-core-0.59.jar:/Users/rabia/.m2/repository/io/github/classgraph/classgraph/4.8.149/classgraph-4.8.149.jar:/Users/rabia/.m2/repository/com/mysql/mysql-connector-j/9.4.0/mysql-connector-j-9.4.0.jar:/Users/rabia/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.5.7/spring-boot-starter-test-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-test/3.5.7/spring-boot-test-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.5.7/spring-boot-test-autoconfigure-3.5.7.jar:/Users/rabia/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/rabia/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.4/jakarta.xml.bind-api-4.0.4.jar:/Users/rabia/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.4/jakarta.activation-api-2.1.4.jar:/Users/rabia/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/Users/rabia/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/Users/rabia/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/Users/rabia/.m2/repository/org/assertj/assertj-core/3.27.6/assertj-core-3.27.6.jar:/Users/rabia/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/Users/rabia/.m2/repository/org/hamcrest/hamcrest/3.0/hamcrest-3.0.jar:/Users/rabia/.m2/repository/org/junit/jupiter/junit-jupiter/5.12.2/junit-jupiter-5.12.2.jar:/Users/rabia/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.12.2/junit-jupiter-params-5.12.2.jar:/Users/rabia/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.12.2/junit-jupiter-engine-5.12.2.jar:/Users/rabia/.m2/repository/org/mockito/mockito-core/5.17.0/mockito-core-5.17.0.jar:/Users/rabia/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar:/Users/rabia/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/rabia/.m2/repository/org/mockito/mockito-junit-jupiter/5.17.0/mockito-junit-jupiter-5.17.0.jar:/Users/rabia/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/rabia/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/rabia/.m2/repository/org/springframework/spring-core/6.2.12/spring-core-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-jcl/6.2.12/spring-jcl-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-test/6.2.12/spring-test-6.2.12.jar:/Users/rabia/.m2/repository/org/xmlunit/xmlunit-core/2.10.4/xmlunit-core-2.10.4.jar:/Users/rabia/.m2/repository/org/springframework/kafka/spring-kafka-test/3.3.10/spring-kafka-test-3.3.10.jar:/Users/rabia/.m2/repository/org/apache/zookeeper/zookeeper/3.8.4/zookeeper-3.8.4.jar:/Users/rabia/.m2/repository/org/apache/zookeeper/zookeeper-jute/3.8.4/zookeeper-jute-3.8.4.jar:/Users/rabia/.m2/repository/org/apache/yetus/audience-annotations/0.12.0/audience-annotations-0.12.0.jar:/Users/rabia/.m2/repository/io/netty/netty-handler/4.1.128.Final/netty-handler-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-common/4.1.128.Final/netty-common-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-resolver/4.1.128.Final/netty-resolver-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-buffer/4.1.128.Final/netty-buffer-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-transport/4.1.128.Final/netty-transport-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.128.Final/netty-transport-native-unix-common-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-codec/4.1.128.Final/netty-codec-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-transport-native-epoll/4.1.128.Final/netty-transport-native-epoll-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.128.Final/netty-transport-classes-epoll-4.1.128.Final.jar:/Users/rabia/.m2/repository/ch/qos/logback/logback-core/1.5.20/logback-core-1.5.20.jar:/Users/rabia/.m2/repository/ch/qos/logback/logback-classic/1.5.20/logback-classic-1.5.20.jar:/Users/rabia/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-clients/3.9.1/kafka-clients-3.9.1-test.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-server/3.9.1/kafka-server-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-storage/3.9.1/kafka-storage-3.9.1.jar:/Users/rabia/.m2/repository/com/github/ben-manes/caffeine/caffeine/3.2.2/caffeine-3.2.2.jar:/Users/rabia/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/Users/rabia/.m2/repository/com/google/errorprone/error_prone_annotations/2.40.0/error_prone_annotations-2.40.0.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-group-coordinator/3.9.1/kafka-group-coordinator-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-transaction-coordinator/3.9.1/kafka-transaction-coordinator-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-raft/3.9.1/kafka-raft-3.9.1.jar:/Users/rabia/.m2/repository/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-metadata/3.9.1/kafka-metadata-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-server-common/3.9.1/kafka-server-common-3.9.1.jar:/Users/rabia/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/rabia/.m2/repository/org/pcollections/pcollections/4.0.1/pcollections-4.0.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-server-common/3.9.1/kafka-server-common-3.9.1-test.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-streams-test-utils/3.9.1/kafka-streams-test-utils-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-streams/3.9.1/kafka-streams-3.9.1.jar:/Users/rabia/.m2/repository/org/rocksdb/rocksdbjni/7.9.2/rocksdbjni-7.9.2.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka_2.13/3.9.1/kafka_2.13-3.9.1.jar:/Users/rabia/.m2/repository/org/scala-lang/scala-library/2.13.15/scala-library-2.13.15.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-group-coordinator-api/3.9.1/kafka-group-coordinator-api-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-storage-api/3.9.1/kafka-storage-api-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-tools-api/3.9.1/kafka-tools-api-3.9.1.jar:/Users/rabia/.m2/repository/net/sourceforge/argparse4j/argparse4j/0.7.0/argparse4j-0.7.0.jar:/Users/rabia/.m2/repository/commons-validator/commons-validator/1.7/commons-validator-1.7.jar:/Users/rabia/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/Users/rabia/.m2/repository/commons-digester/commons-digester/2.1/commons-digester-2.1.jar:/Users/rabia/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/module/jackson-module-scala_2.13/2.19.2/jackson-module-scala_2.13-2.19.2.jar:/Users/rabia/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8.3/paranamer-2.8.3.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-csv/2.19.2/jackson-dataformat-csv-2.19.2.jar:/Users/rabia/.m2/repository/org/bitbucket/b_c/jose4j/0.9.4/jose4j-0.9.4.jar:/Users/rabia/.m2/repository/org/scala-lang/modules/scala-collection-compat_2.13/2.10.0/scala-collection-compat_2.13-2.10.0.jar:/Users/rabia/.m2/repository/org/scala-lang/modules/scala-java8-compat_2.13/1.0.2/scala-java8-compat_2.13-1.0.2.jar:/Users/rabia/.m2/repository/org/scala-lang/scala-reflect/2.13.15/scala-reflect-2.13.15.jar:/Users/rabia/.m2/repository/com/typesafe/scala-logging/scala-logging_2.13/3.9.5/scala-logging_2.13-3.9.5.jar:/Users/rabia/.m2/repository/io/dropwizard/metrics/metrics-core/4.1.12.1/metrics-core-4.1.12.1.jar:/Users/rabia/.m2/repository/commons-cli/commons-cli/1.4/commons-cli-1.4.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka_2.13/3.9.1/kafka_2.13-3.9.1-test.jar:/Users/rabia/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.12.2/junit-jupiter-api-5.12.2.jar:/Users/rabia/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/rabia/.m2/repository/org/junit/platform/junit-platform-commons/1.12.2/junit-platform-commons-1.12.2.jar:/Users/rabia/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/rabia/.m2/repository/org/junit/platform/junit-platform-launcher/1.12.2/junit-platform-launcher-1.12.2.jar:/Users/rabia/.m2/repository/org/junit/platform/junit-platform-engine/1.12.2/junit-platform-engine-1.12.2.jar:/Users/rabia/.m2/repository/org/javatechie/movie-booking-commons/1.0-SNAPSHOT/movie-booking-commons-1.0-SNAPSHOT.jar:/Users/rabia/.m2/repository/org/testng/testng/7.9.0/testng-7.9.0.jar:/Users/rabia/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/Users/rabia/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/Users/rabia/.m2/repository/io/micrometer/micrometer-tracing-bridge-otel/1.5.5/micrometer-tracing-bridge-otel-1.5.5.jar:/Users/rabia/.m2/repository/io/micrometer/micrometer-tracing/1.5.5/micrometer-tracing-1.5.5.jar:/Users/rabia/.m2/repository/io/micrometer/context-propagation/1.1.3/context-propagation-1.1.3.jar:/Users/rabia/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/rabia/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-api/1.34.1/opentelemetry-api-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-context/1.34.1/opentelemetry-context-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv/1.32.0/opentelemetry-semconv-1.32.0.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.34.1/opentelemetry-sdk-common-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.34.1/opentelemetry-sdk-trace-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.34.1/opentelemetry-sdk-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-extension-trace-propagators/1.34.1/opentelemetry-extension-trace-propagators-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-exporter-otlp/1.34.1/opentelemetry-exporter-otlp-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.34.1/opentelemetry-sdk-metrics-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-extension-incubator/1.34.1-alpha/opentelemetry-extension-incubator-1.34.1-alpha.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.34.1/opentelemetry-sdk-logs-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-api-events/1.34.1-alpha/opentelemetry-api-events-1.34.1-alpha.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-exporter-otlp-common/1.34.1/opentelemetry-exporter-otlp-common-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-exporter-common/1.34.1/opentelemetry-exporter-common-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-exporter-sender-okhttp/1.34.1/opentelemetry-exporter-sender-okhttp-1.34.1.jar:/Users/rabia/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/Users/rabia/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/Users/rabia/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/Users/rabia/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.25/kotlin-stdlib-common-1.9.25.jar:/Users/rabia/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.9.25/kotlin-stdlib-jdk8-1.9.25.jar:/Users/rabia/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.25/kotlin-stdlib-1.9.25.jar:/Users/rabia/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/rabia/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.9.25/kotlin-stdlib-jdk7-1.9.25.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.34.1/opentelemetry-sdk-extension-autoconfigure-spi-1.34.1.jar:"/>
+    <property name="java.vm.vendor" value="Azul Systems, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://www.azul.com/"/>
+    <property name="user.timezone" value="Asia/Kolkata"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="APPLICATION_NAME" value="booking-service"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/rabia/IdeaProjects/saga-choreography/booking-service/target/surefire/surefirebooter-20251227155234024_3.jar /Users/rabia/IdeaProjects/saga-choreography/booking-service/target/surefire 2025-12-27T15-52-33_844-jvmRun1 surefire-20251227155234024_1tmp surefire_0-20251227155234024_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/rabia/IdeaProjects/saga-choreography/booking-service/target/test-classes:/Users/rabia/IdeaProjects/saga-choreography/booking-service/target/classes:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.5.7/spring-boot-starter-data-jpa-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter/3.5.7/spring-boot-starter-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot/3.5.7/spring-boot-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.7/spring-boot-autoconfigure-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.5.7/spring-boot-starter-logging-3.5.7.jar:/Users/rabia/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/Users/rabia/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/Users/rabia/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar:/Users/rabia/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/rabia/.m2/repository/org/yaml/snakeyaml/2.4/snakeyaml-2.4.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.5.7/spring-boot-starter-jdbc-3.5.7.jar:/Users/rabia/.m2/repository/com/zaxxer/HikariCP/6.3.3/HikariCP-6.3.3.jar:/Users/rabia/.m2/repository/org/springframework/spring-jdbc/6.2.12/spring-jdbc-6.2.12.jar:/Users/rabia/.m2/repository/org/hibernate/orm/hibernate-core/6.6.33.Final/hibernate-core-6.6.33.Final.jar:/Users/rabia/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/rabia/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/rabia/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/Users/rabia/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/Users/rabia/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/Users/rabia/.m2/repository/com/fasterxml/classmate/1.7.1/classmate-1.7.1.jar:/Users/rabia/.m2/repository/net/bytebuddy/byte-buddy/1.17.8/byte-buddy-1.17.8.jar:/Users/rabia/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.6/jaxb-runtime-4.0.6.jar:/Users/rabia/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.6/jaxb-core-4.0.6.jar:/Users/rabia/.m2/repository/org/eclipse/angus/angus-activation/2.0.3/angus-activation-2.0.3.jar:/Users/rabia/.m2/repository/org/glassfish/jaxb/txw2/4.0.6/txw2-4.0.6.jar:/Users/rabia/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/rabia/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/rabia/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/Users/rabia/.m2/repository/org/springframework/data/spring-data-jpa/3.5.5/spring-data-jpa-3.5.5.jar:/Users/rabia/.m2/repository/org/springframework/data/spring-data-commons/3.5.5/spring-data-commons-3.5.5.jar:/Users/rabia/.m2/repository/org/springframework/spring-orm/6.2.12/spring-orm-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-aop/6.2.12/spring-aop-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-beans/6.2.12/spring-beans-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-aspects/6.2.12/spring-aspects-6.2.12.jar:/Users/rabia/.m2/repository/org/aspectj/aspectjweaver/1.9.24/aspectjweaver-1.9.24.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.5.7/spring-boot-starter-web-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.5.7/spring-boot-starter-json-3.5.7.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.19.2/jackson-datatype-jdk8-2.19.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.19.2/jackson-datatype-jsr310-2.19.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.19.2/jackson-module-parameter-names-2.19.2.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.5.7/spring-boot-starter-tomcat-3.5.7.jar:/Users/rabia/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.48/tomcat-embed-core-10.1.48.jar:/Users/rabia/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.48/tomcat-embed-el-10.1.48.jar:/Users/rabia/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.48/tomcat-embed-websocket-10.1.48.jar:/Users/rabia/.m2/repository/org/springframework/spring-web/6.2.12/spring-web-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-webmvc/6.2.12/spring-webmvc-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-expression/6.2.12/spring-expression-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/kafka/spring-kafka/3.3.10/spring-kafka-3.3.10.jar:/Users/rabia/.m2/repository/org/springframework/spring-context/6.2.12/spring-context-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-messaging/6.2.12/spring-messaging-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-tx/6.2.12/spring-tx-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/retry/spring-retry/2.0.12/spring-retry-2.0.12.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-clients/3.9.1/kafka-clients-3.9.1.jar:/Users/rabia/.m2/repository/com/github/luben/zstd-jni/1.5.6-4/zstd-jni-1.5.6-4.jar:/Users/rabia/.m2/repository/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/Users/rabia/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5.jar:/Users/rabia/.m2/repository/io/micrometer/micrometer-observation/1.15.5/micrometer-observation-1.15.5.jar:/Users/rabia/.m2/repository/io/micrometer/micrometer-commons/1.15.5/micrometer-commons-1.15.5.jar:/Users/rabia/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.0.4/springdoc-openapi-starter-webmvc-ui-2.0.4.jar:/Users/rabia/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.0.4/springdoc-openapi-starter-webmvc-api-2.0.4.jar:/Users/rabia/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.0.4/springdoc-openapi-starter-common-2.0.4.jar:/Users/rabia/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.8/swagger-core-jakarta-2.2.8.jar:/Users/rabia/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/Users/rabia/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.8/swagger-annotations-jakarta-2.2.8.jar:/Users/rabia/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.8/swagger-models-jakarta-2.2.8.jar:/Users/rabia/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.19.2/jackson-dataformat-yaml-2.19.2.jar:/Users/rabia/.m2/repository/org/webjars/swagger-ui/4.18.1/swagger-ui-4.18.1.jar:/Users/rabia/.m2/repository/org/webjars/webjars-locator-core/0.59/webjars-locator-core-0.59.jar:/Users/rabia/.m2/repository/io/github/classgraph/classgraph/4.8.149/classgraph-4.8.149.jar:/Users/rabia/.m2/repository/com/mysql/mysql-connector-j/9.4.0/mysql-connector-j-9.4.0.jar:/Users/rabia/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.5.7/spring-boot-starter-test-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-test/3.5.7/spring-boot-test-3.5.7.jar:/Users/rabia/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.5.7/spring-boot-test-autoconfigure-3.5.7.jar:/Users/rabia/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/rabia/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.4/jakarta.xml.bind-api-4.0.4.jar:/Users/rabia/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.4/jakarta.activation-api-2.1.4.jar:/Users/rabia/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/Users/rabia/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/Users/rabia/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/Users/rabia/.m2/repository/org/assertj/assertj-core/3.27.6/assertj-core-3.27.6.jar:/Users/rabia/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/Users/rabia/.m2/repository/org/hamcrest/hamcrest/3.0/hamcrest-3.0.jar:/Users/rabia/.m2/repository/org/junit/jupiter/junit-jupiter/5.12.2/junit-jupiter-5.12.2.jar:/Users/rabia/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.12.2/junit-jupiter-params-5.12.2.jar:/Users/rabia/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.12.2/junit-jupiter-engine-5.12.2.jar:/Users/rabia/.m2/repository/org/mockito/mockito-core/5.17.0/mockito-core-5.17.0.jar:/Users/rabia/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar:/Users/rabia/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/rabia/.m2/repository/org/mockito/mockito-junit-jupiter/5.17.0/mockito-junit-jupiter-5.17.0.jar:/Users/rabia/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/rabia/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/rabia/.m2/repository/org/springframework/spring-core/6.2.12/spring-core-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-jcl/6.2.12/spring-jcl-6.2.12.jar:/Users/rabia/.m2/repository/org/springframework/spring-test/6.2.12/spring-test-6.2.12.jar:/Users/rabia/.m2/repository/org/xmlunit/xmlunit-core/2.10.4/xmlunit-core-2.10.4.jar:/Users/rabia/.m2/repository/org/springframework/kafka/spring-kafka-test/3.3.10/spring-kafka-test-3.3.10.jar:/Users/rabia/.m2/repository/org/apache/zookeeper/zookeeper/3.8.4/zookeeper-3.8.4.jar:/Users/rabia/.m2/repository/org/apache/zookeeper/zookeeper-jute/3.8.4/zookeeper-jute-3.8.4.jar:/Users/rabia/.m2/repository/org/apache/yetus/audience-annotations/0.12.0/audience-annotations-0.12.0.jar:/Users/rabia/.m2/repository/io/netty/netty-handler/4.1.128.Final/netty-handler-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-common/4.1.128.Final/netty-common-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-resolver/4.1.128.Final/netty-resolver-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-buffer/4.1.128.Final/netty-buffer-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-transport/4.1.128.Final/netty-transport-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.128.Final/netty-transport-native-unix-common-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-codec/4.1.128.Final/netty-codec-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-transport-native-epoll/4.1.128.Final/netty-transport-native-epoll-4.1.128.Final.jar:/Users/rabia/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.128.Final/netty-transport-classes-epoll-4.1.128.Final.jar:/Users/rabia/.m2/repository/ch/qos/logback/logback-core/1.5.20/logback-core-1.5.20.jar:/Users/rabia/.m2/repository/ch/qos/logback/logback-classic/1.5.20/logback-classic-1.5.20.jar:/Users/rabia/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-clients/3.9.1/kafka-clients-3.9.1-test.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-server/3.9.1/kafka-server-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-storage/3.9.1/kafka-storage-3.9.1.jar:/Users/rabia/.m2/repository/com/github/ben-manes/caffeine/caffeine/3.2.2/caffeine-3.2.2.jar:/Users/rabia/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/Users/rabia/.m2/repository/com/google/errorprone/error_prone_annotations/2.40.0/error_prone_annotations-2.40.0.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-group-coordinator/3.9.1/kafka-group-coordinator-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-transaction-coordinator/3.9.1/kafka-transaction-coordinator-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-raft/3.9.1/kafka-raft-3.9.1.jar:/Users/rabia/.m2/repository/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-metadata/3.9.1/kafka-metadata-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-server-common/3.9.1/kafka-server-common-3.9.1.jar:/Users/rabia/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/rabia/.m2/repository/org/pcollections/pcollections/4.0.1/pcollections-4.0.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-server-common/3.9.1/kafka-server-common-3.9.1-test.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-streams-test-utils/3.9.1/kafka-streams-test-utils-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-streams/3.9.1/kafka-streams-3.9.1.jar:/Users/rabia/.m2/repository/org/rocksdb/rocksdbjni/7.9.2/rocksdbjni-7.9.2.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka_2.13/3.9.1/kafka_2.13-3.9.1.jar:/Users/rabia/.m2/repository/org/scala-lang/scala-library/2.13.15/scala-library-2.13.15.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-group-coordinator-api/3.9.1/kafka-group-coordinator-api-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-storage-api/3.9.1/kafka-storage-api-3.9.1.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka-tools-api/3.9.1/kafka-tools-api-3.9.1.jar:/Users/rabia/.m2/repository/net/sourceforge/argparse4j/argparse4j/0.7.0/argparse4j-0.7.0.jar:/Users/rabia/.m2/repository/commons-validator/commons-validator/1.7/commons-validator-1.7.jar:/Users/rabia/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/Users/rabia/.m2/repository/commons-digester/commons-digester/2.1/commons-digester-2.1.jar:/Users/rabia/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/module/jackson-module-scala_2.13/2.19.2/jackson-module-scala_2.13-2.19.2.jar:/Users/rabia/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8.3/paranamer-2.8.3.jar:/Users/rabia/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-csv/2.19.2/jackson-dataformat-csv-2.19.2.jar:/Users/rabia/.m2/repository/org/bitbucket/b_c/jose4j/0.9.4/jose4j-0.9.4.jar:/Users/rabia/.m2/repository/org/scala-lang/modules/scala-collection-compat_2.13/2.10.0/scala-collection-compat_2.13-2.10.0.jar:/Users/rabia/.m2/repository/org/scala-lang/modules/scala-java8-compat_2.13/1.0.2/scala-java8-compat_2.13-1.0.2.jar:/Users/rabia/.m2/repository/org/scala-lang/scala-reflect/2.13.15/scala-reflect-2.13.15.jar:/Users/rabia/.m2/repository/com/typesafe/scala-logging/scala-logging_2.13/3.9.5/scala-logging_2.13-3.9.5.jar:/Users/rabia/.m2/repository/io/dropwizard/metrics/metrics-core/4.1.12.1/metrics-core-4.1.12.1.jar:/Users/rabia/.m2/repository/commons-cli/commons-cli/1.4/commons-cli-1.4.jar:/Users/rabia/.m2/repository/org/apache/kafka/kafka_2.13/3.9.1/kafka_2.13-3.9.1-test.jar:/Users/rabia/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.12.2/junit-jupiter-api-5.12.2.jar:/Users/rabia/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/rabia/.m2/repository/org/junit/platform/junit-platform-commons/1.12.2/junit-platform-commons-1.12.2.jar:/Users/rabia/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/rabia/.m2/repository/org/junit/platform/junit-platform-launcher/1.12.2/junit-platform-launcher-1.12.2.jar:/Users/rabia/.m2/repository/org/junit/platform/junit-platform-engine/1.12.2/junit-platform-engine-1.12.2.jar:/Users/rabia/.m2/repository/org/javatechie/movie-booking-commons/1.0-SNAPSHOT/movie-booking-commons-1.0-SNAPSHOT.jar:/Users/rabia/.m2/repository/org/testng/testng/7.9.0/testng-7.9.0.jar:/Users/rabia/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/Users/rabia/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/Users/rabia/.m2/repository/io/micrometer/micrometer-tracing-bridge-otel/1.5.5/micrometer-tracing-bridge-otel-1.5.5.jar:/Users/rabia/.m2/repository/io/micrometer/micrometer-tracing/1.5.5/micrometer-tracing-1.5.5.jar:/Users/rabia/.m2/repository/io/micrometer/context-propagation/1.1.3/context-propagation-1.1.3.jar:/Users/rabia/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/rabia/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-api/1.34.1/opentelemetry-api-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-context/1.34.1/opentelemetry-context-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv/1.32.0/opentelemetry-semconv-1.32.0.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.34.1/opentelemetry-sdk-common-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.34.1/opentelemetry-sdk-trace-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.34.1/opentelemetry-sdk-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-extension-trace-propagators/1.34.1/opentelemetry-extension-trace-propagators-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-exporter-otlp/1.34.1/opentelemetry-exporter-otlp-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.34.1/opentelemetry-sdk-metrics-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-extension-incubator/1.34.1-alpha/opentelemetry-extension-incubator-1.34.1-alpha.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.34.1/opentelemetry-sdk-logs-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-api-events/1.34.1-alpha/opentelemetry-api-events-1.34.1-alpha.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-exporter-otlp-common/1.34.1/opentelemetry-exporter-otlp-common-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-exporter-common/1.34.1/opentelemetry-exporter-common-1.34.1.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-exporter-sender-okhttp/1.34.1/opentelemetry-exporter-sender-okhttp-1.34.1.jar:/Users/rabia/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/Users/rabia/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/Users/rabia/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/Users/rabia/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.25/kotlin-stdlib-common-1.9.25.jar:/Users/rabia/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.9.25/kotlin-stdlib-jdk8-1.9.25.jar:/Users/rabia/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.25/kotlin-stdlib-1.9.25.jar:/Users/rabia/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/rabia/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.9.25/kotlin-stdlib-jdk7-1.9.25.jar:/Users/rabia/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.34.1/opentelemetry-sdk-extension-autoconfigure-spi-1.34.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/rabia"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/rabia/IdeaProjects/saga-choreography/booking-service"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/rabia/IdeaProjects/saga-choreography/booking-service/target/surefire/surefirebooter-20251227155234024_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="21.0.9+10-LTS"/>
+    <property name="user.name" value="rabia"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="12.7.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Zulu21.46+19-CA"/>
+    <property name="localRepository" value="/Users/rabia/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://www.azul.com/support/"/>
+    <property name="java.io.tmpdir" value="/var/folders/pb/22vzjp492b38qnk1ddp86w7r0000gn/T/"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="21.0.9"/>
+    <property name="user.dir" value="/Users/rabia/IdeaProjects/saga-choreography/booking-service"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="58383"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/rabia/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Azul Systems, Inc."/>
+    <property name="java.vm.version" value="21.0.9+10-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="65.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[booking-service] "/>
+  </properties>
+  <testcase name="contextLoads" classname="com.javatechie.BookingServiceApplicationTests" time="1.053">
+    <system-out><![CDATA[15:52:35.973 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.javatechie.BookingServiceApplicationTests]: BookingServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:52:36.313 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.javatechie.ReservationServiceApplication for test class com.javatechie.BookingServiceApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.7)
+
+2025-12-27T15:52:37.621+05:30  INFO 58383 --- [booking-service] [           main] c.j.BookingServiceApplicationTests       : Starting BookingServiceApplicationTests using Java 21.0.9 with PID 58383 (started by rabia in /Users/rabia/IdeaProjects/saga-choreography/booking-service)
+2025-12-27T15:52:37.623+05:30  INFO 58383 --- [booking-service] [           main] c.j.BookingServiceApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2025-12-27T15:52:39.409+05:30  INFO 58383 --- [booking-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-27T15:52:39.539+05:30  INFO 58383 --- [booking-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 1 JPA repository interface.
+2025-12-27T15:52:40.649+05:30  INFO 58383 --- [booking-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-27T15:52:40.815+05:30  INFO 58383 --- [booking-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-12-27T15:52:40.910+05:30  INFO 58383 --- [booking-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-27T15:52:41.724+05:30  INFO 58383 --- [booking-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-27T15:52:41.797+05:30  INFO 58383 --- [booking-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-27T15:52:42.693+05:30  INFO 58383 --- [booking-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13d10057
+2025-12-27T15:52:42.696+05:30  INFO 58383 --- [booking-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-27T15:52:42.900+05:30  WARN 58383 --- [booking-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-27T15:52:42.944+05:30  INFO 58383 --- [booking-service] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.19
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-27T15:52:45.753+05:30  INFO 58383 --- [booking-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-27T15:52:46.497+05:30  INFO 58383 --- [booking-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27T15:52:47.672+05:30  WARN 58383 --- [booking-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-27T15:52:47.781+05:30  INFO 58383 --- [booking-service] [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-27T15:52:50.154+05:30  INFO 58383 --- [booking-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = booking-service-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-12-27T15:52:50.457+05:30  INFO 58383 --- [booking-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2025-12-27T15:52:50.457+05:30  INFO 58383 --- [booking-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2025-12-27T15:52:50.457+05:30  INFO 58383 --- [booking-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1766830970453
+2025-12-27T15:52:50.483+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:50.486+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:50.591+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:50.591+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:50.694+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:50.694+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:50.897+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:50.897+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:51.405+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:51.405+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:52.117+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:52.118+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:53.032+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:53.033+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:54.045+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:54.046+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:55.058+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:55.059+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:56.072+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:56.072+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:57.089+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:57.090+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:58.001+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:58.001+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:59.020+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:59.021+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:52:59.933+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:52:59.933+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:00.945+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:00.945+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:01.958+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:01.959+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:02.972+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:02.973+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:03.883+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:03.884+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:04.798+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:04.798+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:05.817+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:05.818+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:06.835+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:06.836+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:07.644+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:07.644+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:08.558+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:08.558+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:09.581+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:09.581+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:10.596+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:10.596+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:11.603+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:11.603+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:12.617+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:12.617+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:13.528+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:13.528+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:14.441+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:14.442+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:15.456+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:15.456+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:16.467+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:16.468+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:17.477+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:17.477+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:18.410+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:18.410+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:19.422+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:19.422+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:20.434+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:20.435+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:20.460+05:30  INFO 58383 --- [booking-service] [service-admin-0] o.a.k.c.a.i.AdminMetadataManager         : [AdminClient clientId=booking-service-admin-0] Metadata update failed
+
+org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: fetchMetadata
+
+2025-12-27T15:53:20.469+05:30 ERROR 58383 --- [booking-service] [           main] o.springframework.kafka.core.KafkaAdmin  : Could not configure topics
+
+java.util.concurrent.TimeoutException: null
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095) ~[na:na]
+	at org.apache.kafka.common.internals.KafkaFutureImpl.get(KafkaFutureImpl.java:183) ~[kafka-clients-3.9.1.jar:na]
+	at org.springframework.kafka.core.KafkaAdmin.updateClusterId(KafkaAdmin.java:305) ~[spring-kafka-3.3.10.jar:3.3.10]
+	at org.springframework.kafka.core.KafkaAdmin.initialize(KafkaAdmin.java:276) ~[spring-kafka-3.3.10.jar:3.3.10]
+	at org.springframework.kafka.core.KafkaAdmin.afterSingletonsInstantiated(KafkaAdmin.java:246) ~[spring-kafka-3.3.10.jar:3.3.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1156) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:990) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:144) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-6.2.12.jar:6.2.12]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-6.2.12.jar:6.2.12]
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1461) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:563) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:144) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:110) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:200) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:139) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:159) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:383) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:388) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:382) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:382) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:293) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:292) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:281) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:280) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:27) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:112) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:111) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:128) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:128) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:201) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:170) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:94) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:59) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:142) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$1(InterceptingLauncher.java:39) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:38) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithoutCancellationToken(LauncherAdapter.java:60) ~[surefire-junit-platform-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:52) ~[surefire-junit-platform-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203) ~[surefire-junit-platform-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168) ~[surefire-junit-platform-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136) ~[surefire-junit-platform-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.5.4.jar:3.5.4]
+
+2025-12-27T15:53:21.389+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:21.390+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:22.401+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:22.401+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:23.311+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:23.311+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:24.323+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:24.324+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:25.236+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:25.236+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:26.246+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:26.247+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:27.058+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:27.058+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:28.070+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:28.070+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:29.080+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:29.080+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:30.093+05:30  INFO 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Node -1 disconnected.
+2025-12-27T15:53:30.094+05:30  WARN 58383 --- [booking-service] [service-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=booking-service-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:30.481+05:30  INFO 58383 --- [booking-service] [service-admin-0] o.a.k.clients.admin.KafkaAdminClient     : [AdminClient clientId=booking-service-admin-0] Forcing a hard I/O thread shutdown. Requests in progress will be aborted.
+2025-12-27T15:53:30.485+05:30  INFO 58383 --- [booking-service] [service-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for booking-service-admin-0 unregistered
+2025-12-27T15:53:30.485+05:30  INFO 58383 --- [booking-service] [service-admin-0] o.a.k.c.a.i.AdminMetadataManager         : [AdminClient clientId=booking-service-admin-0] Metadata update failed
+
+org.apache.kafka.common.errors.TimeoutException: The AdminClient thread has exited. Call: fetchMetadata
+
+2025-12-27T15:53:30.486+05:30  INFO 58383 --- [booking-service] [service-admin-0] o.a.k.clients.admin.KafkaAdminClient     : [AdminClient clientId=booking-service-admin-0] Timed out 2 remaining operation(s) during close.
+2025-12-27T15:53:30.498+05:30  INFO 58383 --- [booking-service] [service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-12-27T15:53:30.498+05:30  INFO 58383 --- [booking-service] [service-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27T15:53:30.499+05:30  INFO 58383 --- [booking-service] [service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-12-27T15:53:30.586+05:30  INFO 58383 --- [booking-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-movie-booking-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = movie-booking-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+
+2025-12-27T15:53:30.724+05:30  INFO 58383 --- [booking-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2025-12-27T15:53:30.959+05:30  INFO 58383 --- [booking-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2025-12-27T15:53:30.960+05:30  INFO 58383 --- [booking-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2025-12-27T15:53:30.960+05:30  INFO 58383 --- [booking-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1766831010959
+2025-12-27T15:53:30.965+05:30  INFO 58383 --- [booking-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-movie-booking-group-1, groupId=movie-booking-group] Subscribed to topic(s): payment-events
+2025-12-27T15:53:30.981+05:30  INFO 58383 --- [booking-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-movie-booking-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = movie-booking-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+
+2025-12-27T15:53:30.982+05:30  INFO 58383 --- [booking-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2025-12-27T15:53:31.000+05:30  INFO 58383 --- [booking-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2025-12-27T15:53:31.000+05:30  INFO 58383 --- [booking-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2025-12-27T15:53:31.000+05:30  INFO 58383 --- [booking-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1766831011000
+2025-12-27T15:53:31.001+05:30  INFO 58383 --- [booking-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-movie-booking-group-2, groupId=movie-booking-group] Subscribed to topic(s): seat-reserved-topic
+2025-12-27T15:53:31.023+05:30  INFO 58383 --- [booking-service] [           main] c.j.BookingServiceApplicationTests       : Started BookingServiceApplicationTests in 54.272 seconds (process running for 56.782)
+2025-12-27T15:53:32.060+05:30  INFO 58383 --- [booking-service] [-listener-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-movie-booking-group-2, groupId=movie-booking-group] Node -1 disconnected.
+2025-12-27T15:53:32.061+05:30  WARN 58383 --- [booking-service] [-listener-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-movie-booking-group-2, groupId=movie-booking-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:32.062+05:30  WARN 58383 --- [booking-service] [-listener-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-movie-booking-group-2, groupId=movie-booking-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2025-12-27T15:53:32.066+05:30  INFO 58383 --- [booking-service] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-movie-booking-group-1, groupId=movie-booking-group] Node -1 disconnected.
+2025-12-27T15:53:32.067+05:30  WARN 58383 --- [booking-service] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-movie-booking-group-1, groupId=movie-booking-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2025-12-27T15:53:32.067+05:30  WARN 58383 --- [booking-service] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-movie-booking-group-1, groupId=movie-booking-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+]]></system-out>
+    <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/rabia/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+</testsuite>
