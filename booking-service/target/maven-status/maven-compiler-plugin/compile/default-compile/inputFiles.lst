@@ -1,5 +1,6 @@
 /Users/rabia/IdeaProjects/saga-choreography/booking-service/src/main/java/com/javatechie/MovieBookingListener.java
 /Users/rabia/IdeaProjects/saga-choreography/booking-service/src/main/java/com/javatechie/ReservationServiceApplication.java
+/Users/rabia/IdeaProjects/saga-choreography/booking-service/src/main/java/com/javatechie/config/BookingStatus.java
 /Users/rabia/IdeaProjects/saga-choreography/booking-service/src/main/java/com/javatechie/config/KafkaConfig.java
 /Users/rabia/IdeaProjects/saga-choreography/booking-service/src/main/java/com/javatechie/config/KafkaConsumerConfig.java
 /Users/rabia/IdeaProjects/saga-choreography/booking-service/src/main/java/com/javatechie/config/KafkaErrorHandlerConfig.java

@@ -2,7 +2,6 @@ package com.javatechie.listener;
 
 import com.javatechie.common.KafkaConfigProperties;
 import com.javatechie.events.BookingPaymentEvent;
-import com.javatechie.service.BookingService;
 import com.javatechie.service.SeatInventoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
