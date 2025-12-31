@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker{
-            image "alpine"
-        }
-    }
+    agent any
 
     environment {
         DOCKER_HUB_CREDENTIALS = 'dockerhub-creds'
