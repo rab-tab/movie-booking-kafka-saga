@@ -1,5 +1,11 @@
 pipeline {
     agent { label 'docker' } // Top-level Docker-enabled node
+    environment {
+            DOCKER_HUB_CREDENTIALS = 'dockerhub-creds'
+            DOCKER_REGISTRY = 'rabtab'
+            IMAGE_TAG = "${BUILD_NUMBER}"
+            DOCKER_BUILDKIT = '1'
+        }
     stages {
         stage('Checkout') {
             steps {
