@@ -1,38 +1,19 @@
 pipeline {
-    agent any  // runs checkout on any available agent
-
-    environment {
-        DOCKER_HUB_CREDENTIALS = 'dockerhub-creds'
-        DOCKER_REGISTRY = 'rabtab'
-        IMAGE_TAG = "${BUILD_NUMBER}"
-        DOCKER_BUILDKIT = '1'
-    }
-
+    agent { label 'docker' } // Top-level Docker-enabled node
     stages {
-
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/rab-tab/movie-booking-kafka-saga.git'
+                git branch: 'main', url: 'https://github.com/rab-tab/movie-booking-kafka-saga.git'
             }
         }
 
-        stage('Build Maven Reactor (Docker)') {
-            agent { label 'docker' } // ensures this runs on Docker-enabled node
+        stage('Build Maven Reactor (Once)') {
             steps {
-                sh '''
-                  docker run --rm \
-                    -v $HOME/.m2:/root/.m2 \
-                    -v $PWD:/app \
-                    -w /app \
-                    maven:3.9.5-eclipse-temurin-21 \
-                    mvn -T 1C clean package -DskipTests
-                '''
+                sh 'mvn -T 1C clean package -DskipTests'
             }
         }
 
         stage('Docker Login') {
-            agent { label 'docker' } // runs on Docker-enabled node
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: DOCKER_HUB_CREDENTIALS,
@@ -45,9 +26,7 @@ pipeline {
         }
 
         stage('Build & Push Docker Images') {
-            agent { label 'docker' } // runs on Docker-enabled node
             parallel {
-
                 stage('Booking Service') {
                     steps {
                         sh '''
@@ -79,9 +58,6 @@ pipeline {
     }
 
     post {
-        always {
-            agent { label 'docker' } // ensures logout runs on Docker node
-            sh 'docker logout'
-        }
+        always { sh 'docker logout' }
     }
 }
