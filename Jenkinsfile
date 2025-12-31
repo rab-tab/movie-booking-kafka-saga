@@ -5,6 +5,7 @@ pipeline {
         DOCKER_HUB_CREDENTIALS = 'dockerhub-creds'
         DOCKER_REGISTRY = 'rabtab'
         IMAGE_TAG = "${BUILD_NUMBER}"
+        DOCKER_BUILDKIT = '1'
     }
 
     stages {
@@ -16,9 +17,17 @@ pipeline {
             }
         }
 
-        stage('Build Maven Reactor') {
+        stage('Build Maven Reactor (Once)') {
+            agent {
+                docker {
+                    image 'maven:3.9.5-eclipse-temurin-21'
+                    args '-v $HOME/.m2:/root/.m2'
+                }
+            }
             steps {
-                sh 'mvn clean install -DskipTests'
+                sh '''
+                  mvn -T 1C clean package -DskipTests
+                '''
             }
         }
 
@@ -39,28 +48,34 @@ pipeline {
 
                 stage('Booking Service') {
                     steps {
-                        dir('booking-service') {
-                            sh 'docker build -t $DOCKER_REGISTRY/booking-service:$IMAGE_TAG .'
-                            sh 'docker push $DOCKER_REGISTRY/booking-service:$IMAGE_TAG'
-                        }
+                        sh '''
+                          docker build \
+                            -t $DOCKER_REGISTRY/booking-service:$IMAGE_TAG \
+                            booking-service
+                          docker push $DOCKER_REGISTRY/booking-service:$IMAGE_TAG
+                        '''
                     }
                 }
 
                 stage('Seat Inventory Service') {
                     steps {
-                        dir('seat-inventory-service') {
-                            sh 'docker build -t $DOCKER_REGISTRY/seat-inventory-service:$IMAGE_TAG .'
-                            sh 'docker push $DOCKER_REGISTRY/seat-inventory-service:$IMAGE_TAG'
-                        }
+                        sh '''
+                          docker build \
+                            -t $DOCKER_REGISTRY/seat-inventory-service:$IMAGE_TAG \
+                            seat-inventory-service
+                          docker push $DOCKER_REGISTRY/seat-inventory-service:$IMAGE_TAG
+                        '''
                     }
                 }
 
                 stage('Payment Service') {
                     steps {
-                        dir('payment-service') {
-                            sh 'docker build -t $DOCKER_REGISTRY/payment-service:$IMAGE_TAG .'
-                            sh 'docker push $DOCKER_REGISTRY/payment-service:$IMAGE_TAG'
-                        }
+                        sh '''
+                          docker build \
+                            -t $DOCKER_REGISTRY/payment-service:$IMAGE_TAG \
+                            payment-service
+                          docker push $DOCKER_REGISTRY/payment-service:$IMAGE_TAG
+                        '''
                     }
                 }
             }
