@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_REGISTRY = 'rabtab'
         IMAGE_TAG = "${BUILD_NUMBER}"
-        DOCKER_CONFIG = "${WORKSPACE}/.docker"
+        DOCKER_CONFIG = "/Users/rabia/.docker-jenkins" // critical
     }
 
     stages {
@@ -16,29 +16,17 @@ pipeline {
             }
         }
 
-        stage('Build Maven Reactor') {
+        stage('Build Maven') {
             steps {
                 sh 'mvn -T 1C clean package -DskipTests'
             }
         }
 
-        stage('Prepare Docker Auth') {
-            steps {
-                withCredentials([string(
-                    credentialsId: 'dockerhub-auth',
-                    variable: 'DOCKER_AUTH_JSON'
-                )]) {
-                    sh '''
-                      mkdir -p $DOCKER_CONFIG
-                      echo "$DOCKER_AUTH_JSON" > $DOCKER_CONFIG/config.json
-                    '''
-                }
-            }
-        }
-
-        stage('Build & Push Images') {
+        stage('Build & Push Docker Images') {
             steps {
                 sh '''
+                  docker login https://index.docker.io/v1/  # will use config.json automatically
+
                   docker build -t $DOCKER_REGISTRY/booking-service:$IMAGE_TAG booking-service
                   docker push $DOCKER_REGISTRY/booking-service:$IMAGE_TAG
 
@@ -49,6 +37,12 @@ pipeline {
                   docker push $DOCKER_REGISTRY/payment-service:$IMAGE_TAG
                 '''
             }
+        }
+    }
+
+    post {
+        always {
+            sh 'docker logout || true'
         }
     }
 }
