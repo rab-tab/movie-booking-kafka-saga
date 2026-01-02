@@ -2,12 +2,9 @@ pipeline {
     agent { label 'docker' }
 
     environment {
-        DOCKER_HUB_CREDENTIALS = 'dockerhub-creds'
         DOCKER_REGISTRY = 'rabtab'
         IMAGE_TAG = "${BUILD_NUMBER}"
-
-        // 🔑 Critical line: bypass macOS keychain
-        DOCKER_CONFIG = "/Users/rabia/.docker-jenkins"
+        DOCKER_CONFIG = "${WORKSPACE}/.docker"
     }
 
     stages {
@@ -25,33 +22,33 @@ pipeline {
             }
         }
 
-        stage('Build & Push Docker Images') {
+        stage('Prepare Docker Auth') {
             steps {
-                withCredentials([usernamePassword(
-                    credentialsId: DOCKER_HUB_CREDENTIALS,
-                    usernameVariable: 'DOCKER_USER',
-                    passwordVariable: 'DOCKER_PASS'
+                withCredentials([string(
+                    credentialsId: 'dockerhub-auth',
+                    variable: 'DOCKER_AUTH_JSON'
                 )]) {
                     sh '''
-                      echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-
-                      docker build -t $DOCKER_REGISTRY/booking-service:$IMAGE_TAG booking-service
-                      docker push $DOCKER_REGISTRY/booking-service:$IMAGE_TAG
-
-                      docker build -t $DOCKER_REGISTRY/seat-inventory-service:$IMAGE_TAG seat-inventory-service
-                      docker push $DOCKER_REGISTRY/seat-inventory-service:$IMAGE_TAG
-
-                      docker build -t $DOCKER_REGISTRY/payment-service:$IMAGE_TAG payment-service
-                      docker push $DOCKER_REGISTRY/payment-service:$IMAGE_TAG
+                      mkdir -p $DOCKER_CONFIG
+                      echo "$DOCKER_AUTH_JSON" > $DOCKER_CONFIG/config.json
                     '''
                 }
             }
         }
-    }
 
-    post {
-        always {
-            sh 'docker logout || true'
+        stage('Build & Push Images') {
+            steps {
+                sh '''
+                  docker build -t $DOCKER_REGISTRY/booking-service:$IMAGE_TAG booking-service
+                  docker push $DOCKER_REGISTRY/booking-service:$IMAGE_TAG
+
+                  docker build -t $DOCKER_REGISTRY/seat-inventory-service:$IMAGE_TAG seat-inventory-service
+                  docker push $DOCKER_REGISTRY/seat-inventory-service:$IMAGE_TAG
+
+                  docker build -t $DOCKER_REGISTRY/payment-service:$IMAGE_TAG payment-service
+                  docker push $DOCKER_REGISTRY/payment-service:$IMAGE_TAG
+                '''
+            }
         }
     }
 }
