@@ -17,10 +17,11 @@ pipeline {
     stages {
 
         stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
+                    steps {
+                        git branch: 'main',
+                            url: 'https://github.com/rab-tab/movie-booking-kafka-saga.git'
+                    }
+                }
 
         stage('Build Maven Reactor') {
             steps {
