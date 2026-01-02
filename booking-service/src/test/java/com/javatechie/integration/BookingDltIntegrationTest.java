@@ -10,27 +10,31 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.kafka.test.context.EmbeddedKafka;
-import org.springframework.kafka.test.utils.KafkaTestUtils;
-import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
+import org.testcontainers.containers.KafkaContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.time.Duration;
 import java.util.List;
 
 import static com.javatechie.common.KafkaConfigProperties.SEAT_RESERVED_TOPIC;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doThrow;
 
+@Testcontainers
 @SpringBootTest
-@EmbeddedKafka(
-        partitions = 1,
-        topics = { SEAT_RESERVED_TOPIC, SEAT_RESERVED_TOPIC + "-dlt" }
-)
-@TestPropertySource(properties = {
-        "spring.kafka.bootstrap-servers=${spring.embedded.kafka.brokers}"
-})
 class BookingDltIntegrationTest {
+
+    @Container
+    static KafkaContainer kafka = new KafkaContainer("confluentinc/cp-kafka:8.9.0");
+
+    @DynamicPropertySource
+    static void kafkaProperties(DynamicPropertyRegistry registry) {
+        registry.add("spring.kafka.bootstrap-servers", kafka::getBootstrapServers);
+    }
 
     @Autowired
     private KafkaTemplate<String, Object> kafkaTemplate;
@@ -42,15 +46,14 @@ class BookingDltIntegrationTest {
     private BookingService bookingService;
 
     @Test
-    void should_send_message_to_dlt_after_retries() {
+    void should_send_event_to_dlt_after_retries() {
 
-        // 🔥 Force retryable failure
+        // Force a retryable exception
         doThrow(new RuntimeException("DB down"))
                 .when(bookingService)
                 .markBookingPending(any());
 
-        SeatReservedEvent event =
-                new SeatReservedEvent("B2", true,100);
+        SeatReservedEvent event = new SeatReservedEvent("B2", true);
 
         kafkaTemplate.send(SEAT_RESERVED_TOPIC, event.bookingId(), event);
 
@@ -60,7 +63,7 @@ class BookingDltIntegrationTest {
         consumer.subscribe(List.of(SEAT_RESERVED_TOPIC + "-dlt"));
 
         ConsumerRecords<String, Object> records =
-                KafkaTestUtils.getRecords(consumer, Duration.ofSeconds(15));
+                org.springframework.kafka.test.utils.KafkaTestUtils.getRecords(consumer, Duration.ofSeconds(15));
 
         assertThat(records.count()).isGreaterThan(0);
     }
