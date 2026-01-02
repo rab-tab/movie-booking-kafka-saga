@@ -1,12 +1,6 @@
 pipeline {
 
-    agent {
-        docker {
-            image 'maven:3.9.6-eclipse-temurin-21'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-            reuseNode true
-        }
-    }
+    agent any
 
     environment {
         DOCKER_HUB_CREDENTIALS = 'dockerhub-creds'
