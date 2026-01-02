@@ -6,7 +6,7 @@ pipeline {
         DOCKER_REGISTRY = 'rabtab'
         IMAGE_TAG = "${BUILD_NUMBER}"
 
-        // Use a separate docker config folder to avoid keychain
+        // Use a separate docker config folder to avoid macOS keychain
         DOCKER_CONFIG = "/Users/rabia/.docker-jenkins"
     }
 
@@ -27,18 +27,20 @@ pipeline {
 
         stage('Docker Login & Build/Push') {
             steps {
-                // Jenkins credentials (username = Docker Hub user, password = token)
                 withCredentials([usernamePassword(
                     credentialsId: DOCKER_HUB_CREDENTIALS,
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
                     sh '''
-                        # Remove old config to avoid macOS keychain
+                        # Remove old config to avoid macOS keychain issues
                         rm -rf $DOCKER_CONFIG
                         mkdir -p $DOCKER_CONFIG
 
-                        # Headless login using stdin (bypasses keychain)
+                        # Create empty config.json so Docker does not use osxkeychain
+                        echo '{"auths":{}}' > $DOCKER_CONFIG/config.json
+
+                        # Headless login using credentials from Jenkins
                         echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
 
                         # Build & push each service
@@ -58,8 +60,11 @@ pipeline {
 
     post {
         always {
-            // Logout Docker
-            sh 'docker logout || true'
+            // Logout Docker (safe even if login failed)
+            sh '''
+                docker logout || true
+                rm -rf $DOCKER_CONFIG
+            '''
         }
     }
 }
