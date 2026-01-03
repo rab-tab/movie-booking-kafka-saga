@@ -15,6 +15,8 @@ import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.KafkaContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
+import org.testcontainers.utility.DockerImageName;
+
 
 import java.time.Duration;
 import java.util.List;
@@ -23,13 +25,15 @@ import static com.javatechie.common.KafkaConfigProperties.SEAT_RESERVED_TOPIC;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doThrow;
+import org.testcontainers.containers.KafkaContainer;
+import org.testcontainers.utility.DockerImageName;
 
 @Testcontainers
 @SpringBootTest
 class BookingDltIntegrationTest {
 
     @Container
-    static KafkaContainer kafka = new KafkaContainer("confluentinc/cp-kafka:8.9.0");
+    static KafkaContainer kafka = new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:8.9.0"));
 
     @DynamicPropertySource
     static void kafkaProperties(DynamicPropertyRegistry registry) {
@@ -53,7 +57,7 @@ class BookingDltIntegrationTest {
                 .when(bookingService)
                 .markBookingPending(any());
 
-        SeatReservedEvent event = new SeatReservedEvent("B2", true);
+        SeatReservedEvent event = new SeatReservedEvent("B2", true,500);
 
         kafkaTemplate.send(SEAT_RESERVED_TOPIC, event.bookingId(), event);
 
