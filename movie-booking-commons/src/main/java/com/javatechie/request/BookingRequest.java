@@ -1,8 +1,9 @@
 package com.javatechie.request;
 
+import java.time.Instant;
 import java.util.List;
 
-public record BookingRequest(String reservationId,
+public record BookingRequest(String reservationId, String showId,
                              List<String> seatIds, String userId,
-                             long amount) {
+                             Instant timestamp, long amount) {
 }
