@@ -16,6 +16,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.time.Instant;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -40,10 +41,12 @@ class BookingServiceTest {
     @Test
     void should_book_seats_and_publish_event() {
         BookingRequest request = new BookingRequest(
-                "show-1",
-                List.of("A1"),
-                "user-1",
-                200
+                "res-123",                 // reservationId
+                "show-1",                  // showId
+                List.of("A1"),              // seatIds
+                "user-1",                  // userId
+                Instant.now(),              // timestamp
+                200L                        // amount
         );
 
         Booking savedBooking = BookingRequestToEntityMapper.map(request);

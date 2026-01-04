@@ -1,1 +1,7 @@
+com/javatechie/integration/BookingDltIntegrationTest.class
+com/javatechie/service/BookingServiceTest.class
+com/javatechie/controller/BookingControllerTest.class
+com/javatechie/listener/MovieBookingListenerTest.class
 com/javatechie/BookingServiceApplicationTests.class
+com/javatechie/messaging/BookingEventProducerTest.class
+com/javatechie/integration/BookingKafkaIntegrationTest.class

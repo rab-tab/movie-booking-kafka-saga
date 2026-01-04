@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.test.context.EmbeddedKafka;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
-import org.testcontainers.containers.KafkaContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
+
 
 import java.time.Duration;
 
@@ -19,17 +19,13 @@ import static com.javatechie.common.KafkaConfigProperties.SEAT_RESERVED_TOPIC;
 import static org.awaitility.Awaitility.await;
 import static org.mockito.Mockito.verify;
 
-@Testcontainers
 @SpringBootTest
+@ActiveProfiles("test")
+@EmbeddedKafka(
+        topics = SEAT_RESERVED_TOPIC,
+        partitions = 1
+)
 class BookingKafkaIntegrationTest {
-
-    @Container
-    static KafkaContainer kafka = new KafkaContainer("confluentinc/cp-kafka:8.9.0");
-
-    @DynamicPropertySource
-    static void kafkaProperties(DynamicPropertyRegistry registry) {
-        registry.add("spring.kafka.bootstrap-servers", kafka::getBootstrapServers);
-    }
 
     @Autowired
     private KafkaTemplate<String, Object> kafkaTemplate;
@@ -40,13 +36,14 @@ class BookingKafkaIntegrationTest {
     @Test
     void should_consume_seat_reserved_event_and_mark_pending() {
 
-        SeatReservedEvent event = new SeatReservedEvent("B1", true);
+        SeatReservedEvent event = new SeatReservedEvent("B1", true, 200);
 
         kafkaTemplate.send(SEAT_RESERVED_TOPIC, event.bookingId(), event);
 
-        await().atMost(Duration.ofSeconds(15))
+        await().atMost(Duration.ofSeconds(5))
                 .untilAsserted(() ->
                         verify(bookingService).markBookingPending("B1")
                 );
     }
 }
+
