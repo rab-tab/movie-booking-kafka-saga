@@ -1,4 +1,7 @@
 spring:
+  application:
+    name: booking-service
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/javatechie
@@ -16,6 +19,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
 
   kafka:
+    client-id: ${spring.application.name}
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
@@ -47,12 +51,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health,info,metrics,prometheus
   endpoint:
     health:
       show-details: always
-
-otel:
-  exporter:
-    otlp:
-      endpoint: http://localhost:4317

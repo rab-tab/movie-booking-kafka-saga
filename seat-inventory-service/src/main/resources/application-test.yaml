@@ -1,12 +1,28 @@
 spring:
+  # Use in-memory H2 for tests instead of MySQL
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop   # create schema for tests
+    show-sql: false           # optional: set true if you want SQL logs
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${spring.embedded.kafka.brokers}
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
-      bootstrap-servers: localhost:9092
       auto-offset-reset: earliest
+      group-id: test-group
       key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
@@ -14,23 +30,20 @@ spring:
         spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
         spring.json.trusted.packages: "*"
 
-
-server:
-  port: 9393
-
 kafka:
   retry:
     attempts: 3
-    backoff-ms: 2000
+    backoff-ms: 500        # can reduce backoff in tests
   topics:
-    seat-reserved: seat-reserved-topic
+    booking-created: movie-booking-events
+    payment-events: payment-events
     dlt:
-      seat-reserved: seat-reserved-topic-dlt
+      booking-created: movie-booking-events-dlt
+      payment-events: payment-events-dlt
 
 management:
   tracing:
-    sampling:
-      probability: 1.0
+    enabled: false          # disable tracing in tests
   endpoints:
     web:
       exposure:
@@ -40,7 +53,5 @@ management:
         show-details: always
 
 otel:
-  exporter:
-    otlp:
-      endpoint: http://localhost:4317
-
+  sdk:
+    disabled: true           # disable OTEL in tests
